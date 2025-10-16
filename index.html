@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algebra Quest - Master Math!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="container">
+        <!-- Welcome Screen -->
+        <div id="welcomeScreen" class="screen active">
+            <div class="welcome-content">
+                <h1 class="game-title">🚀 Algebra Quest</h1>
+                <p class="subtitle">Master algebra from 4th to 8th grade!</p>
+                <div class="avatar-selector">
+                    <h3>Choose Your Avatar:</h3>
+                    <div class="avatars">
+                        <button class="avatar-btn" data-avatar="🧙‍♂️">🧙‍♂️<span>Wizard</span></button>
+                        <button class="avatar-btn" data-avatar="🦸‍♀️">🦸‍♀️<span>Hero</span></button>
+                        <button class="avatar-btn" data-avatar="🤖">🤖<span>Robot</span></button>
+                        <button class="avatar-btn" data-avatar="🐉">🐉<span>Dragon</span></button>
+                    </div>
+                </div>
+                <div class="name-input-container">
+                    <input type="text" id="playerName" placeholder="Enter your name" maxlength="15">
+                    <button id="startBtn" class="btn-primary" disabled>Start Adventure!</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Level Selection Screen -->
+        <div id="levelScreen" class="screen">
+            <div class="header">
+                <div class="player-info">
+                    <span class="avatar-display" id="playerAvatar"></span>
+                    <span id="playerNameDisplay"></span>
+                </div>
+                <div class="stats">
+                    <div class="stat">
+                        <span class="stat-label">⭐ Score:</span>
+                        <span id="totalScore">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">🏆 Badges:</span>
+                        <span id="badgeCount">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title">Choose Your Grade Level</h2>
+            <div class="level-grid">
+                <div class="level-card" data-grade="4">
+                    <div class="level-number">Grade 4</div>
+                    <div class="level-topics">
+                        <p>✓ Basic equations</p>
+                        <p>✓ Simple patterns</p>
+                        <p>✓ Missing numbers</p>
+                    </div>
+                    <button class="btn-level">Start</button>
+                </div>
+                <div class="level-card" data-grade="5">
+                    <div class="level-number">Grade 5</div>
+                    <div class="level-topics">
+                        <p>✓ Variables</p>
+                        <p>✓ Two-step equations</p>
+                        <p>✓ Order of operations</p>
+                    </div>
+                    <button class="btn-level">Start</button>
+                </div>
+                <div class="level-card" data-grade="6">
+                    <div class="level-number">Grade 6</div>
+                    <div class="level-topics">
+                        <p>✓ Expressions</p>
+                        <p>✓ Inequalities</p>
+                        <p>✓ Ratios & proportions</p>
+                    </div>
+                    <button class="btn-level">Start</button>
+                </div>
+                <div class="level-card" data-grade="7">
+                    <div class="level-number">Grade 7</div>
+                    <div class="level-topics">
+                        <p>✓ Multi-step equations</p>
+                        <p>✓ Negative numbers</p>
+                        <p>✓ Linear relationships</p>
+                    </div>
+                    <button class="btn-level">Start</button>
+                </div>
+                <div class="level-card" data-grade="8">
+                    <div class="level-number">Grade 8</div>
+                    <div class="level-topics">
+                        <p>✓ Quadratic equations</p>
+                        <p>✓ Systems of equations</p>
+                        <p>✓ Functions</p>
+                    </div>
+                    <button class="btn-level">Start</button>
+                </div>
+            </div>
+
+            <div class="badges-section">
+                <h3>Your Badges</h3>
+                <div id="badgesDisplay" class="badges-container"></div>
+            </div>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="gameScreen" class="screen">
+            <div class="header">
+                <div class="player-info">
+                    <span class="avatar-display" id="gameAvatar"></span>
+                    <button id="backBtn" class="btn-back">← Back</button>
+                </div>
+                <div class="game-stats">
+                    <div class="stat">
+                        <span class="stat-label">Level:</span>
+                        <span id="currentGrade"></span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Score:</span>
+                        <span id="currentScore">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Streak:</span>
+                        <span id="streak">0</span>🔥
+                    </div>
+                </div>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+                <span class="progress-text" id="progressText">Question 1 of 10</span>
+            </div>
+
+            <div class="question-container">
+                <div id="questionText" class="question"></div>
+                <div id="visualAid" class="visual-aid"></div>
+                
+                <div class="answer-section">
+                    <input type="text" id="answerInput" placeholder="Your answer" autocomplete="off">
+                    <button id="submitBtn" class="btn-submit">Submit</button>
+                    <button id="hintBtn" class="btn-hint">💡 Hint</button>
+                </div>
+
+                <div id="hintBox" class="hint-box hidden"></div>
+                <div id="feedback" class="feedback hidden"></div>
+            </div>
+
+            <div class="timer-container">
+                <span>⏱️ Time: <span id="timer">0</span>s</span>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="resultsScreen" class="screen">
+            <div class="results-content">
+                <h2 id="resultsTitle">Level Complete!</h2>
+                <div id="resultsAvatar" class="results-avatar"></div>
+                
+                <div class="results-stats">
+                    <div class="result-stat">
+                        <div class="result-value" id="finalScore">0</div>
+                        <div class="result-label">Points Earned</div>
+                    </div>
+                    <div class="result-stat">
+                        <div class="result-value" id="correctAnswers">0</div>
+                        <div class="result-label">Correct Answers</div>
+                    </div>
+                    <div class="result-stat">
+                        <div class="result-value" id="accuracy">0%</div>
+                        <div class="result-label">Accuracy</div>
+                    </div>
+                    <div class="result-stat">
+                        <div class="result-value" id="timeSpent">0s</div>
+                        <div class="result-label">Time</div>
+                    </div>
+                </div>
+
+                <div id="newBadge" class="new-badge hidden"></div>
+                <div id="encouragement" class="encouragement"></div>
+
+                <div class="results-actions">
+                    <button id="retryBtn" class="btn-primary">Try Again</button>
+                    <button id="nextLevelBtn" class="btn-primary hidden">Next Level</button>
+                    <button id="menuBtn" class="btn-secondary">Main Menu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
