@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  content-generator:
+    build: .
+    container_name: motivational-content-gen
+    volumes:
+      - ./output:/app/output
+      - ./temp:/app/temp
+    environment:
+      - OUTPUT_DIR=/app/output
+      - TEMP_DIR=/app/temp
+      - MAX_VIDEO_LENGTH=60
+      - MIN_VIDEO_LENGTH=15
+      - CLIPS_PER_VIDEO=3
+      - GENERATION_INTERVAL_HOURS=1
+      - VIDEO_RESOLUTION=1080x1920
+    restart: unless-stopped
+    command: python main.py hourly

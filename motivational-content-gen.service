@@ -1,0 +1,15 @@
+[Unit]
+Description=Motivational Content Generator
+After=network.target
+
+[Service]
+Type=simple
+User=%i
+WorkingDirectory=/path/to/your/project
+Environment="PATH=/path/to/your/project/venv/bin"
+ExecStart=/path/to/your/project/venv/bin/python main.py hourly
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
