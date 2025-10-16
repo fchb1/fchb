@@ -1,123 +1,119 @@
-# 🚀 Algebra Quest - Interactive Math Learning Game
+# TikTok Content Generator for Mobile Detailing
 
-An engaging, progressive web-based game that teaches algebra from 4th grade to 8th grade level. Designed to make learning algebra fun and interactive!
+A powerful content generation tool designed specifically for mobile detailing businesses to create engaging TikTok content that drives bookings and grows your audience.
 
-## 🎮 Features
+## 🚀 Quick Start
 
-### Progressive Learning
-- **Grade 4**: Basic equations, simple patterns, missing numbers
-- **Grade 5**: Variables, two-step equations, order of operations
-- **Grade 6**: Expressions, inequalities, ratios & proportions
-- **Grade 7**: Multi-step equations, negative numbers, linear relationships
-- **Grade 8**: Quadratic equations, systems of equations, functions
+**New User?** → Start with [GETTING_STARTED.md](GETTING_STARTED.md)
 
-### Gamification Elements
-- 🎯 **Score System**: Earn points for correct answers
-- 🔥 **Streak Bonuses**: Get bonus points for consecutive correct answers
-- 🏆 **Badges**: Unlock achievements for completing levels and reaching milestones
-- ⭐ **Progress Tracking**: Your progress is automatically saved
-- 💡 **Hints System**: Get help when you're stuck (with a small point penalty)
+**Want to Jump Right In?** → Read [QUICKSTART.md](QUICKSTART.md)
 
-### Interactive Features
-- Choose your avatar (Wizard, Hero, Robot, or Dragon)
-- Visual aids for each question type
-- Instant feedback on answers
-- Animated stars and celebrations
-- Responsive design for mobile and desktop
-- Timer to track your speed
-
-## 🚀 How to Run
-
-Simply open `index.html` in any modern web browser:
+### Generate Your First Post (10 seconds)
 
 ```bash
-# Using a local server (recommended)
-python3 -m http.server 8000
-# Then open http://localhost:8000 in your browser
-
-# Or with Node.js
-npx serve
-# Then open the provided URL
-
-# Or just double-click index.html
+python3 content_generator.py --type post
 ```
 
-## 🎓 How to Play
+### Interactive Mode (Easiest for Beginners)
 
-1. **Choose Your Avatar**: Select your favorite character
-2. **Enter Your Name**: Personalize your experience
-3. **Select a Grade Level**: Start with Grade 4 or challenge yourself!
-4. **Answer Questions**: Solve 10 algebra problems per level
-5. **Use Hints**: Stuck? Click the hint button for help
-6. **Earn Badges**: Complete levels and unlock achievements
-7. **Progress**: Move up to higher grades as you improve
+```bash
+python3 content_generator.py --interactive
+```
 
-## 🏆 Badge System
+## ✨ Features
 
-Unlock these achievements:
-- 🌟 **First Steps**: Complete your first level
-- 🎓 **Grade Masters**: Complete each grade level (4-8)
-- 💯 **Perfect Score**: Get 100% accuracy
-- ⚡ **Speed Demon**: Complete a level in under 2 minutes
-- 🔥 **Hot Streak**: Get 5 correct answers in a row
+- 🎯 **Complete Posts**: Video concepts + captions + hashtags + strategy
+- 📝 **Engaging Captions**: Hooks that grab attention in 3 seconds
+- 🏷️ **Smart Hashtags**: Researched combinations for maximum reach
+- 🎬 **Video Concepts**: Shot-by-shot breakdowns with duration
+- 📅 **Content Calendar**: Plan weeks of content in advance
+- 🔥 **Trending Integration**: Adapt viral trends to detailing
+- 🎨 **Fully Customizable**: Make it match your brand voice
+- 💾 **JSON Export**: Save and organize your content plans
 
-## 💾 Progress Saving
+## 📋 Requirements
 
-Your progress is automatically saved in your browser's local storage, including:
-- Total score
-- Completed levels
-- Earned badges
-- Player name and avatar
+- Python 3.6 or higher
+- **No external dependencies!** (Uses Python standard library only)
 
-## 🎨 Features Highlights
+## 🎯 Usage Examples
 
-- **No Boring Drills**: Each question type is varied to keep engagement high
-- **Visual Learning**: Emojis and visual aids help contextualize problems
-- **Instant Feedback**: Know immediately if you're right or wrong
-- **Encouraging Messages**: Positive reinforcement regardless of performance
-- **Beautiful Design**: Modern gradient design with smooth animations
+### Generate Complete Post
+Perfect for daily content creation:
+```bash
+python3 content_generator.py --type post
+```
 
-## 📱 Responsive Design
+Output includes: Video concept, hook, caption, hashtags, posting times, engagement tips
 
-Works perfectly on:
-- Desktop computers
-- Tablets
-- Mobile phones
+### Generate Content Ideas
+When you need inspiration:
+```bash
+python3 content_generator.py --type ideas --count 10
+```
 
-## 🛠️ Technical Stack
+### Generate Captions Only
+For videos you already have planned:
+```bash
+python3 content_generator.py --type caption --count 5
+```
 
-- Pure HTML5
-- CSS3 (with animations and gradients)
-- Vanilla JavaScript (no frameworks required)
-- Local Storage for data persistence
+### Generate Hashtags
+Quick hashtag sets:
+```bash
+python3 content_generator.py --type hashtags --count 15
+```
 
-## 🎯 Learning Objectives
+### Generate Video Concepts
+Get specific video ideas with shot lists:
+```bash
+python3 content_generator.py --type concept --difficulty easy
+```
 
-This game aligns with Common Core State Standards for Mathematics for grades 4-8, covering:
-- Understanding and solving equations
-- Working with variables and expressions
-- Pattern recognition and sequences
-- Order of operations
-- Inequalities and comparisons
-- Ratios and proportions
-- Linear relationships and functions
-- Basic quadratic equations
-- Systems of equations
+### Generate Content Calendar
+Plan your entire week:
+```bash
+python3 content_generator.py --type calendar --days 7
+```
 
-## 🌟 Future Enhancements
+### Topic-Specific Content
+Focus on a specific service:
+```bash
+python3 content_generator.py --type post --topic "ceramic-coating"
+```
 
-Potential additions:
-- Multiplayer mode
-- Leaderboards
-- More problem types
-- Custom difficulty settings
-- Progress reports for parents/teachers
-- Additional grade levels
+### Save to File
+Export for planning:
+```bash
+python3 content_generator.py --type calendar --days 7 --output week.json
+```
 
-## 📄 License
+## 📚 Documentation
 
-This project is open source and available for educational use.
+| Document | Purpose |
+|----------|---------|
+| [GETTING_STARTED.md](GETTING_STARTED.md) | 👈 **Start here** - Complete beginner's guide |
+| [QUICKSTART.md](QUICKSTART.md) | Get up and running in 5 minutes |
+| [CUSTOMIZATION_GUIDE.md](CUSTOMIZATION_GUIDE.md) | Personalize for your business |
+| [TIKTOK_STRATEGY.md](TIKTOK_STRATEGY.md) | Complete TikTok marketing strategy |
+| [examples.md](examples.md) | Examples and best practices |
+| [PROJECT_OVERVIEW.md](PROJECT_OVERVIEW.md) | High-level project overview |
 
----
+## 🎨 Content Types Supported
 
-**Made with ❤️ for students who want to master algebra!**
+- **Before/After Transformations** - Dramatic results that wow viewers
+- **Satisfying Cleaning Videos** - ASMR and oddly satisfying content
+- **Educational Tutorials** - Share your expertise and build authority
+- **Behind the Scenes** - Show your process and build connection
+- **Customer Reactions** - Social proof and testimonials
+- **Product Reviews** - Showcase tools and products
+- **Day in the Life** - Personal brand building
+- **Trending Challenges** - Adapt viral trends to detailing
+- **Problem/Solution** - Common car care issues
+- **Storytelling** - Engaging narratives
+
+## 🎬 Example Output
+
+When you run `python3 content_generator.py --type post`, you get:
+
+```

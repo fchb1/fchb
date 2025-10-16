@@ -1,0 +1,2 @@
+# Core dependencies for TikTok Content Generator
+# No external dependencies required - uses only Python standard library
